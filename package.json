@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/wertiks/test/issues"
   },
-  "homepage": "https://github.com/wertiks/test#readme"
+  "homepage": "https://github.com/wertiks/test#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.0"
+  }
 }
