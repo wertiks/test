@@ -31,12 +31,14 @@ const distPath = path.join(__dirname, '/public');
 
 const config = {
     entry: {
-        app: './src/app.js'
+        app: './src/index.js'
     },
     output: {
         filename: 'bundle.js',
         path: distPath
     },
+
+
     module: {
         rules: [{
             test: /\.js$/,
@@ -72,6 +74,16 @@ const config = {
                     name: 'fonts/[name][hash].[ext]'
                 }
             },
+        },
+            {
+            test: /\.less$/,
+            use: [{
+                loader: 'style-loader' // creates style nodes from JS strings
+            }, {
+                loader: 'css-loader' // translates CSS into CommonJS
+            }, {
+                loader: 'less-loader' // compiles Less to CSS
+            }]
         }]
     },
 
