@@ -1,0 +1,22 @@
+body{
+  background-color: red;
+}
+
+@font-size: 40px;
+
+.b-test {
+  margin-top: 50px;
+  padding: 30px;
+  background: #fff;
+
+  &__heading {
+    font-size: @font-size;
+    color: blue;
+     & > div {
+        width: 25px;
+        height: 25px;
+        background-color: chartreuse;
+     }
+  }
+}
+
