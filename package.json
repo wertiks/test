@@ -8,7 +8,7 @@
     "lint": "eslint ./src",
     "start": "webpack-dev-server --mode development --hot --colors --progress",
     "start_old": "webpack-dev-server --progress --inline --hot",
-    "dev": "SET NODE_ENV=development && npm run start",
+    "dev": "npm run start",
     "prod": "SET NODE_ENV=production && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,14 +24,21 @@
   "homepage": "https://github.com/wertiks/test#readme",
   "dependencies": {
     "babel": "^6.23.0",
+    "history": "^4.7.2",
     "jquery": "^3.3.1",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",

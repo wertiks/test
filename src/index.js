@@ -1,13 +1,24 @@
-var $ = require('jquery');
-var str = require('./constants');
-require('./less');
+import React from 'react';
+import ReactDom from 'react-dom';
+import { Provider }  from 'react-redux'; // позволяет связывать сторе со всеми элементами
+import { Router,  browserHistory } from 'react-router';
+import { syncHistoryWithStore }  from 'react-router-redux';
+import PropTypes from 'prop-types';
+import configureStore from "./store";
+import routes from './routes';
+import { createHashHistory } from 'history';
 
-var App = function() {
-    console.log(str + 'test');
-    $('body').html(str + '<div class="b-test"> <h3 class="b-test__heading"> HELLO WORLD <div> </div>  </h3></div>  ');
-};
+const store = configureStore(); // создание стора
+// const history = syncHistoryWithStore( browserHistory, store ); // синхронизируется стор с историей и находить по навигации
+const history = createHashHistory(store);
 
-var app = new App();
 
-console.log('test!!!!');
-
+ReactDom.render((
+    <Provider store={ store }>
+       <Router history={ history }>
+            { routes }
+        </Router>
+    </Provider>
+    ),
+    document.querySelector('#app')
+);
