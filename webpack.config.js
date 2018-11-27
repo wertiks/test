@@ -45,9 +45,10 @@ const config = {
             exclude: [/node_modules/],
             use: [{
                 loader: 'babel-loader',
-                options: {
+/*                options: {
                     presets: ['env', 'react']
                 }
+*/
             }]
         }, {
             test: /\.(gif|png|jpe?g|svg)$/i,
@@ -75,6 +76,7 @@ const config = {
                 }
             },
         },
+
             {
             test: /\.less$/,
             use: [{
@@ -84,7 +86,9 @@ const config = {
             }, {
                 loader: 'less-loader' // compiles Less to CSS
             }]
-        }]
+        }
+
+        ]
     },
 
     devServer: {
@@ -96,6 +100,7 @@ const config = {
 };
 
 if (isDevelopment) {
+
     fs.readdirSync(distPath)
         .map((fileName) => {
             if (['.css', '.js'].includes(path.extname(fileName))) {
@@ -104,6 +109,7 @@ if (isDevelopment) {
 
             return '';
         });
+
 }
 
 if (isProduction) {
