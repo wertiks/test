@@ -17,7 +17,7 @@ export default class Header extends React.Component {
                         <ul className='nav navbar-nav'>
                             <li> <Link to ='/home'> Главная </Link> </li>
                             <li> <Link to ='/contact'> Контакт </Link> </li>
-                            <li> <Link to ='/list'> Список </Link> </li>
+                            <li> <Link to ='/list'> Список Todo</Link> </li>
                             <li> <Link to ='/train'> СтрТеста </Link> </li>
                             <li> <Link to ='/error'> СтрОшибки </Link> </li>
                         </ul>
